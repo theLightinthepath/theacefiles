@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>connection terminated</title>
+
+<style>
+body {
+  background: black;
+  color: #00aaff;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#text {
+  text-align: center;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="text"></div>
+
+<script>
+const lines = [
+"connection terminated",
+"",
+"signal interrupted",
+"",
+"..."
+];
+
+let i = 0;
+const el = document.getElementById("text");
+
+function type() {
+  if (i < lines.length) {
+    el.innerHTML += lines[i] + "<br>";
+    i++;
+    setTimeout(type, 600);
+  }
+}
+
+type();
+</script>
+
+</body>
+</html>
